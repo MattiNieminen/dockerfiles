@@ -14,16 +14,14 @@ docker build -t my-sass .
 Then run the container interactively with
 
 ```bash
-docker run -it --rm -v $PWD/workdir:/root/workdir/ my-sass /bin/bash
+docker run -it --rm -v <path/to/sass/files>:/root/workdir/ my-sass /bin/bash
 ```
 
 You will get a prompt with ```sass``` and ```sass-convert``` installed to PATH.
-Put all your SASS (*.scss or *.sass) files on your host to directory
-```workdir``` in this directory, and they will be mounted to your containers
-WORKDIR.
+You SASS files (*.scss or *.sass) in <path/to/sass/files> on your host will be
+mounted to ```workdir``` in the container.
 
-For example, convert .sass files to .scss files, put them to ```workdir```
-and do
+For example, to convert .sass files to .scss files, do
 
 ```bash
 sass-convert my-sass.sass my-scss.scss
