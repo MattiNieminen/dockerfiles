@@ -11,7 +11,7 @@ Build the image after cloning this repository with
 docker build -t my-sass .
 ```
 
-Then run the container interactively with
+Then replace the `<path/to/sass/files>` in the following command and run it
 
 ```bash
 docker run -it --rm -v <path/to/sass/files>:/root/workdir/ my-sass /bin/bash
