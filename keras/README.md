@@ -18,4 +18,4 @@ docker run --rm -p 8888:8888 -e "TOKEN=<random-token-string>" -v <path/to/notebo
 ```
 
 Jupyter will start in http://localhost:8888 with <path/to/notebooks> mounted as
-a volume. Use the <random-token-string> to login.
+a volume. Use <random-token-string> to login.
