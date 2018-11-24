@@ -1,4 +1,4 @@
-# dockerfiles
+# Keras
 
 Docker image for Keras and Jupyter Notebook (CPU-support only).
 

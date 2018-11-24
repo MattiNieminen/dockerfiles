@@ -1,4 +1,4 @@
-# dockerfiles
+# SASS
 
 Docker image for compiling / converting .sass and .scss files to each other and
 CSS.
