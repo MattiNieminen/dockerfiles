@@ -16,6 +16,7 @@ apt-get install -y --no-install-recommends \
 sudo \
 curl \
 rlwrap \
+git \
 openjdk-11-jdk \
 firefox && \
 # Install Clojure
