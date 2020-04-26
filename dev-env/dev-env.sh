@@ -24,5 +24,8 @@ docker run -it --rm \
 --name "$container_name" \
 --mount type=bind,source="$HOME/.gitconfig",target="$home_inside/.gitconfig" \
 --mount type=bind,source="$HOME/.git-credentials",target="$home_inside/.git-credentials" \
+--mount type=bind,source="$HOME/.zshrc",target="$home_inside/.zshrc" \
+--mount type=bind,source="$HOME/.zsh",target="$home_inside/.zsh" \
+--mount type=bind,source="$HOME/.zsh_history",target="$home_inside/.zsh_history" \
 "$image_name" \
-bash
+zsh

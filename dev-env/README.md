@@ -2,11 +2,11 @@
 
 Docker image for my personal development environment:
 
+* Git (shared configuration with host)
+* Zsh (shared configuration with host)
 * JDK
 * Javascript, Node, NPM
 * Clojure(script)
-* Zsh with pure-prompt
-* Git (shared configuration with host)
 * Spacemacs
 
 You have to be running Xorg server on your host for this to work.
