@@ -7,7 +7,11 @@ Docker image for my personal development environment:
 * JDK
 * Javascript, Node, NPM
 * Clojure(script)
-* Spacemacs
+* Spacemacs (shared configuration with host)
+
+The home directory of the user inside the container is mounted
+as a named volume, meaning that files in home directory are
+saved even between image builds and container restarts.
 
 You have to be running Xorg server on your host for this to work.
 
