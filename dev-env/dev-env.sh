@@ -22,10 +22,12 @@ docker run -it --rm \
 -e DISPLAY="unix$DISPLAY" \
 --user "$user_id:$group_id" \
 --name "$container_name" \
+--mount type=volume,source="dev-env-home",target="$home_inside/" \
 --mount type=bind,source="$HOME/.gitconfig",target="$home_inside/.gitconfig" \
 --mount type=bind,source="$HOME/.git-credentials",target="$home_inside/.git-credentials" \
 --mount type=bind,source="$HOME/.zshrc",target="$home_inside/.zshrc" \
 --mount type=bind,source="$HOME/.zsh",target="$home_inside/.zsh" \
 --mount type=bind,source="$HOME/.zsh_history",target="$home_inside/.zsh_history" \
+--mount type=bind,source="$HOME/.spacemacs",target="$home_inside/.spacemacs" \
 "$image_name" \
 zsh

@@ -18,8 +18,8 @@ curl \
 rlwrap \
 git \
 openjdk-11-jdk \
-firefox \
-zsh && \
+zsh \
+emacs && \
 # Install Clojure
 curl -O https://download.clojure.org/install/linux-install-1.10.1.536.sh && \
 chmod +x linux-install-1.10.1.536.sh && \
@@ -31,5 +31,9 @@ sudo apt-get install -y nodejs && \
 # Add a user
 useradd -m -s /bin/bash -u $USER_ID -G sudo $USER_NAME
 
-# Switch to created user
-#USER $USER_NAME
+#
+# User phase
+#
+USER $USER_NAME
+WORKDIR /home/${USER_NAME}
+RUN git clone -b develop https://github.com/syl20bnr/spacemacs ~/.emacs.d
