@@ -8,11 +8,14 @@ user_name="$(whoami)"
 user_id="$(id -u)"
 group_id="$(id -g)"
 home_inside="/home/$user_name"
+timezone="$(cat /etc/timezone)"
 
 if [[ "$(docker images -q $image_name 2> /dev/null)" == "" ]]; then
   docker build \
   --build-arg USER_NAME="$user_name" \
   --build-arg USER_ID="$user_id" \
+  --build-arg DEBIAN_FRONTEND="noninteractive" \
+  --build-arg TZ="$timezone" \
   -t "$image_name" .
 fi
 
