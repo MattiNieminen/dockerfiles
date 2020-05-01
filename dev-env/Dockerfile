@@ -23,6 +23,8 @@ curl \
 rlwrap \
 git \
 openjdk-11-jdk \
+maven \
+leiningen \
 zsh \
 emacs && \
 # Install Clojure
