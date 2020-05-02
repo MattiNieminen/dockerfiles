@@ -21,6 +21,7 @@ apt-get install -y --no-install-recommends \
 sudo \
 curl \
 rlwrap \
+fonts-ubuntu \
 git \
 openjdk-11-jdk \
 maven \
