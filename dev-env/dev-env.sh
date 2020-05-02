@@ -33,6 +33,7 @@ if [[ "$(docker ps -q -f status=running -f name=$container_name)" == "" ]]; then
   --mount type=bind,source="$HOME/.zsh",target="$home_inside/.zsh" \
   --mount type=bind,source="$HOME/.zsh_history",target="$home_inside/.zsh_history" \
   --mount type=bind,source="$HOME/.spacemacs",target="$home_inside/.spacemacs" \
+  --mount type=bind,source="$HOME/workspace",target="$home_inside/workspace" \
   "$image_name" \
   zsh
 else
