@@ -46,4 +46,5 @@ useradd -m -s /bin/bash -u $USER_ID -G sudo $USER_NAME
 #
 USER $USER_NAME
 WORKDIR /home/${USER_NAME}
+# Spacemacs
 RUN git clone -b develop https://github.com/syl20bnr/spacemacs ~/.emacs.d
