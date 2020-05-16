@@ -35,7 +35,7 @@ chmod +x linux-install-1.10.1.536.sh && \
 ./linux-install-1.10.1.536.sh && \
 rm linux-install-1.10.1.536.sh && \
 # Node
-curl -sL https://deb.nodesource.com/setup_13.x | sudo -E bash - && \
+curl -sL https://deb.nodesource.com/setup_13.x | bash - && \
 sudo apt-get install -y nodejs && \
 # Add a user
 useradd -m -s /bin/bash -u $USER_ID -G sudo $USER_NAME
