@@ -1,17 +1,22 @@
 FROM ubuntu:20.04
 
 ARG USER_NAME
-ARG USER_ID
-ARG DEBIAN_FRONTEND
-ARG TZ
+ONBUILD ARG USER_NAME
 
+ARG USER_ID
+ONBUILD ARG USER_ID
+
+ARG DEBIAN_FRONTEND
+ONBUILD ARG DEBIAN_FRONTEND
 ENV DEBIAN_FRONTEND=$DEBIAN_FRONTEND
+
+ARG TZ
+ONBUILD ARG TZ
 ENV TZ=$TZ
 
 ##
 ## Root phase
 ##
-
 
 # Update packages
 RUN apt-get update && \
@@ -45,6 +50,6 @@ useradd -m -s /bin/bash -u $USER_ID -G sudo $USER_NAME
 # User phase
 #
 USER $USER_NAME
-WORKDIR /home/${USER_NAME}
+WORKDIR /home/$USER_NAME
 # Spacemacs
 RUN git clone -b develop https://github.com/syl20bnr/spacemacs ~/.emacs.d
