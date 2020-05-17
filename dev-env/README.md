@@ -16,6 +16,9 @@ saved even between image builds and container restarts.
 
 You have to be running Xorg server on your host for this to work.
 
+This image can be also used as a parent image for more specific
+development enviroments.
+
 ## Usage
 
 Create a symbolic link for running the container from anywhere:
@@ -31,4 +34,39 @@ After linking the script it can be run with:
 
 ```bash
 dev-env.sh
+```
+
+### Child images
+
+See ```dev-env.sh --help``` for instructions how to select build directory
+and give a distinct name for the image and container. Below is an example
+Dockerfile where JDK 8 is used and a command how to build a derived image:
+
+Dockerfile:
+
+```
+FROM my-dev-env:latest
+
+##
+## Root phase
+##
+USER root
+WORKDIR /
+# Java 8
+apt-get install -y --no-install-recommends openjdk-8-jdk && \
+update-java-alternatives -s java-1.8.0-openjdk-amd64
+
+#
+# User phase
+#
+USER $USER_NAME
+WORKDIR /home/$USER_NAME
+
+```
+
+First build the parent image by running ```dev-env.sh``` normally.
+Then build the child image with the command below:
+
+```bash
+dev-env.sh --build [PATH-TO-DIR-WITH-ABOVE-DOCKERFILE] --name jdk8-dev-env
 ```
