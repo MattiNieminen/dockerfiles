@@ -26,6 +26,7 @@ apt-get install -y --no-install-recommends \
 sudo \
 curl \
 rlwrap \
+gnupg \
 fonts-ubuntu \
 git \
 openjdk-11-jdk \
@@ -33,8 +34,10 @@ maven \
 leiningen \
 zsh \
 emacs \
-cloc \
-firefox && \
+cloc && \
+# Google Chrome
+curl -O https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb && \
+apt install -y ./google-chrome-stable_current_amd64.deb && \
 # Install Clojure
 curl -O https://download.clojure.org/install/linux-install-1.10.1.536.sh && \
 chmod +x linux-install-1.10.1.536.sh && \
