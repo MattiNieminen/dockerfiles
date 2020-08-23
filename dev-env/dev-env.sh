@@ -52,6 +52,7 @@ buildImage() {
 runContainer() {
   if [[ "$(docker ps -q -f status=running -f name=$name)" == "" ]]; then
     docker run -it --rm \
+    --privileged \
     --network=host \
     --mount type=bind,source=/tmp/.X11-unix,target=/tmp/.X11-unix \
     -e DISPLAY="unix$DISPLAY" \
